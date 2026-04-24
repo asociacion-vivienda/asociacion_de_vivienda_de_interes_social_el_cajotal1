@@ -1,0 +1,26 @@
+{
+  "generated_by": "generate_manifest.py",
+  "version": 1,
+  "total_barrios": 5,
+  "total_photos": 8,
+  "barrios": {
+    "Brisas de Belen": [
+      "brisas-01.jpeg"
+    ],
+    "El Cajotal": [
+      "cajotal-01.jpeg",
+      "cajotal-02.jpeg",
+      "cajotal-03.jpeg"
+    ],
+    "Morichal": [
+      "morichal-01.jpeg",
+      "morichal-02.jpeg"
+    ],
+    "Nuestro Equipo": [
+      "equipo-01.jpeg"
+    ],
+    "Villa Celmira": [
+      "celmira-01.jpeg"
+    ]
+  }
+}

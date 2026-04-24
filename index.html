@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CJ Constructores LTDA · Construyendo Hogares, Construyendo País</title>
+  <meta name="description" content="CJ Constructores LTDA · Más de 27 años construyendo vivienda de interés social en Norte de Santander, Colombia." />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="script.js" defer></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Theme toggle (checkbox hack, CSS-only) -->
+  <input type="checkbox" id="theme-toggle" class="theme-toggle-input" />
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#home" class="logo">
+        <div class="logo-mark">
+          <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <defs>
+              <linearGradient id="lg1" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#2f80ed"/>
+                <stop offset="1" stop-color="#0b2545"/>
+              </linearGradient>
+            </defs>
+            <rect x="2" y="2" width="44" height="44" rx="10" fill="url(#lg1)"/>
+            <path d="M12 34 L24 14 L36 34 Z" fill="#f4b400" opacity=".95"/>
+            <rect x="20" y="26" width="8" height="8" fill="#ffffff"/>
+          </svg>
+        </div>
+        <div class="logo-text">
+          <span class="logo-title">CJ</span>
+          <span class="logo-sub">Constructores</span>
+        </div>
+      </a>
+
+      <nav class="nav" aria-label="Principal">
+        <a href="#historia">Historia</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#galeria">Galería</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+
+      <label for="theme-toggle" class="theme-toggle" title="Cambiar tema" aria-label="Cambiar tema claro/oscuro">
+        <span class="toggle-track">
+          <span class="toggle-icon sun">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+          </span>
+          <span class="toggle-icon moon">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          </span>
+          <span class="toggle-thumb"></span>
+        </span>
+      </label>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section id="home" class="hero">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <span class="eyebrow"><span class="dot"></span> Desde 1999 · Norte de Santander, Colombia</span>
+          <h1>
+            Construyendo <span class="gradient-text">hogares</span>,
+            construyendo <span class="underline-text">país</span>.
+          </h1>
+          <p class="lead">
+            Más de <strong>800 soluciones de vivienda</strong> entregadas a familias colombianas.
+            CJ Constructores LTDA, la evolución natural de la Asociación de Vivienda de Interés Social
+            El Cajotal.
+          </p>
+          <div class="cta-row">
+            <a href="#proyectos" class="btn btn-primary">Ver proyectos <span aria-hidden="true">→</span></a>
+            <a href="#contacto" class="btn btn-ghost">Contáctanos</a>
+          </div>
+          <div class="hero-stats">
+            <div><b>27+</b><span>años de experiencia</span></div>
+            <div><b>800+</b><span>viviendas entregadas</span></div>
+            <div><b>9</b><span>proyectos ejecutados</span></div>
+            <div><b>7</b><span>municipios</span></div>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="blueprint-card">
+            <div class="bp-header">
+              <span class="bp-dot"></span><span class="bp-dot"></span><span class="bp-dot"></span>
+              <span class="bp-file">proyecto-2026.dwg</span>
+            </div>
+            <div class="bp-grid">
+              <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
+                    <path d="M 10 0 L 0 0 0 10" fill="none" stroke="currentColor" stroke-width=".3" opacity=".3"/>
+                  </pattern>
+                </defs>
+                <rect width="200" height="200" fill="url(#grid)"/>
+                <g stroke="currentColor" stroke-width="1.5" fill="none">
+                  <rect x="20" y="60" width="70" height="90"/>
+                  <rect x="110" y="60" width="70" height="90"/>
+                  <path d="M20 60 L55 30 L90 60"/>
+                  <path d="M110 60 L145 30 L180 60"/>
+                  <rect x="45" y="100" width="20" height="30" fill="currentColor" opacity=".15"/>
+                  <rect x="135" y="100" width="20" height="30" fill="currentColor" opacity=".15"/>
+                </g>
+                <g stroke="#f4b400" stroke-width="1" fill="none" opacity=".8">
+                  <path d="M10 170 L190 170" stroke-dasharray="3 3"/>
+                </g>
+              </svg>
+            </div>
+            <div class="bp-footer">
+              <span>Escala 1:100</span>
+              <span>CJ-2026</span>
+            </div>
+          </div>
+          <div class="floating-card card-1">
+            <span class="fc-label">Calidad certificada</span>
+            <span class="fc-value">ISO · Ministerio de Vivienda</span>
+          </div>
+          <div class="floating-card card-2">
+            <span class="fc-label">Proyecto activo</span>
+            <span class="fc-value">Brisas de Belén · 23 viviendas</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HISTORIA -->
+    <section id="historia" class="section">
+      <div class="container">
+        <header class="section-head">
+          <span class="section-kicker">01 · Nuestra historia</span>
+          <h2>De una asociación comunitaria a una constructora consolidada.</h2>
+          <p class="section-lead">
+            Una historia de 27 años construida con esfuerzo colectivo, vocación social y
+            responsabilidad con cada familia que confía en nosotros.
+          </p>
+        </header>
+
+        <div class="history-grid">
+          <article class="story-card">
+            <div class="story-year">1999</div>
+            <h3>El origen</h3>
+            <p>
+              Nace la <strong>Organización Popular de Vivienda de Interés Social El Cajotal</strong>
+              bajo el modelo de autoconstrucción. Los asociados aportaban $30.000 mensuales y
+              100 jornales de mano de obra, complementados con subsidios del antiguo INURBE.
+            </p>
+          </article>
+
+          <article class="story-card accent">
+            <div class="story-year">2010</div>
+            <h3>La evolución</h3>
+            <p>
+              Ante el cambio de políticas nacionales, en <strong>octubre de 2010</strong> los
+              socios Carmen Lucía, Yimar Alonso, Edgar y Manuel Enrique Torrado conforman
+              <strong>CJ Constructores LTDA</strong>, dando continuidad profesional al sueño colectivo.
+            </p>
+          </article>
+
+          <article class="story-card">
+            <div class="story-year">Hoy</div>
+            <h3>Un legado vivo</h3>
+            <p>
+              Más de <strong>800 viviendas</strong> entregadas en municipios como Ábrego,
+              Villa del Rosario, Chinácota y Villa Caro. Cada casa es el testimonio de una
+              comunidad que decidió no esperar a que el futuro llegara, sino construirlo.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROYECTOS / TIMELINE -->
+    <section id="proyectos" class="section section-alt">
+      <div class="container">
+        <header class="section-head">
+          <span class="section-kicker">02 · Trayectoria</span>
+          <h2>Proyectos que transformaron comunidades.</h2>
+          <p class="section-lead">
+            Cada barrio representa años de gestión, trabajo técnico y articulación con
+            INURBE, FONVIVIENDA, alcaldías y gobernaciones.
+          </p>
+        </header>
+
+        <div class="projects-grid">
+
+          <article class="project-card">
+            <div class="pc-top">
+              <span class="pc-tag">1999 — 2001</span>
+              <span class="pc-count">120 viviendas</span>
+            </div>
+            <h3>Barrios El Cajotal 1, 2 y 3</h3>
+            <p class="pc-loc">Ábrego, Norte de Santander</p>
+            <p class="pc-desc">El origen. Autoconstrucción comunitaria con subsidio INURBE.</p>
+            <div class="pc-bar"><span style="--w:60%"></span></div>
+          </article>
+
+          <article class="project-card">
+            <div class="pc-top">
+              <span class="pc-tag">2002 — 2004</span>
+              <span class="pc-count">89 viviendas</span>
+            </div>
+            <h3>Barrio Isabel Celis Yáñez</h3>
+            <p class="pc-loc">Ábrego, Norte de Santander</p>
+            <p class="pc-desc">Consolidación del modelo de vivienda social en Ábrego.</p>
+            <div class="pc-bar"><span style="--w:55%"></span></div>
+          </article>
+
+          <article class="project-card">
+            <div class="pc-top">
+              <span class="pc-tag">2005 — 2007</span>
+              <span class="pc-count">90 viviendas</span>
+            </div>
+            <h3>Barrio Villa Celmira</h3>
+            <p class="pc-loc">Ábrego, Norte de Santander</p>
+            <p class="pc-desc">Convenio FONVIVIENDA · nuevo estándar de urbanismo.</p>
+            <div class="pc-bar"><span style="--w:58%"></span></div>
+          </article>
+
+          <article class="project-card featured">
+            <div class="pc-top">
+              <span class="pc-tag">2008 — 2010</span>
+              <span class="pc-count">190 viviendas</span>
+            </div>
+            <h3>Barrio El Morichal</h3>
+            <p class="pc-loc">Villa del Rosario, Norte de Santander</p>
+            <p class="pc-desc">
+              Respuesta a la ola invernal. Alianza con alcaldía, CENS y Ministerio de Vivienda.
+            </p>
+            <div class="pc-bar"><span style="--w:95%"></span></div>
+          </article>
+
+          <article class="project-card">
+            <div class="pc-top">
+              <span class="pc-tag">2010 — 2012</span>
+              <span class="pc-count">70 viviendas</span>
+            </div>
+            <h3>Villas de San Nicolás</h3>
+            <p class="pc-loc">Chinácota, Norte de Santander</p>
+            <p class="pc-desc">Con ASCHIMUCAF y apoyo de la alcaldía municipal.</p>
+            <div class="pc-bar"><span style="--w:40%"></span></div>
+          </article>
+
+          <article class="project-card">
+            <div class="pc-top">
+              <span class="pc-tag">2012 — 2014</span>
+              <span class="pc-count">80 viviendas</span>
+            </div>
+            <h3>Barrio Isabel Celis</h3>
+            <p class="pc-loc">Villa Caro, Norte de Santander</p>
+            <p class="pc-desc">Unión Temporal con la Alcaldía de Villa Caro.</p>
+            <div class="pc-bar"><span style="--w:45%"></span></div>
+          </article>
+
+          <article class="project-card">
+            <div class="pc-top">
+              <span class="pc-tag">2016 — 2022</span>
+              <span class="pc-count">70 viviendas</span>
+            </div>
+            <h3>Villa Celmira Etapa 2</h3>
+            <p class="pc-loc">Ábrego, Norte de Santander</p>
+            <p class="pc-desc">UT con CJ Constructores LTDA · cierre de ciclo.</p>
+            <div class="pc-bar"><span style="--w:42%"></span></div>
+          </article>
+
+          <article class="project-card live">
+            <div class="pc-top">
+              <span class="pc-tag">2025 — Actual</span>
+              <span class="pc-count">23 viviendas</span>
+            </div>
+            <h3>Proyecto Brisas de Belén</h3>
+            <p class="pc-loc">Norte de Santander · en ejecución</p>
+            <p class="pc-desc">
+              Nuestra apuesta actual: vivienda digna con diseño moderno y eficiencia energética.
+            </p>
+            <div class="pc-bar"><span style="--w:28%"></span></div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section id="servicios" class="section">
+      <div class="container">
+        <header class="section-head">
+          <span class="section-kicker">03 · Servicios</span>
+          <h2>Construimos integral, pensamos comunidad.</h2>
+          <p class="section-lead">
+            De la planeación urbanística a la entrega de llaves: acompañamos cada etapa del proyecto.
+          </p>
+        </header>
+
+        <div class="services-grid">
+          <article class="service-card">
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21 L12 3 L21 21 Z"/><path d="M9 21 L9 13 L15 13 L15 21"/></svg>
+            </div>
+            <h3>Vivienda de interés social</h3>
+            <p>Construcción de soluciones de vivienda en convenio con gobiernos nacionales y locales.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 3v18"/></svg>
+            </div>
+            <h3>Urbanismo y obras civiles</h3>
+            <p>Acueducto, alcantarillado, electrificación, andenes y sardineles llave en mano.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20h16M6 20V9l6-5 6 5v11M10 20v-6h4v6"/></svg>
+            </div>
+            <h3>Gestión con entidades</h3>
+            <p>Experiencia comprobada con INURBE, FONVIVIENDA, alcaldías y gobernaciones.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+            </div>
+            <h3>Uniones temporales</h3>
+            <p>Asociamos capacidades técnicas y administrativas para proyectos de alto impacto.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12l2-2 4 4 8-8 4 4"/><path d="M3 21h18"/></svg>
+            </div>
+            <h3>Interventoría técnica</h3>
+            <p>Supervisión, control de calidad y cumplimiento normativo en cada obra.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            <h3>Diseño arquitectónico</h3>
+            <p>Planeación urbanística moderna enfocada en comunidades sostenibles.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALERIA DINÁMICA -->
+    <section id="galeria" class="section section-alt">
+      <div class="container">
+        <header class="section-head gallery-head">
+          <div>
+            <span class="section-kicker">04 · Galería por barrio</span>
+            <h2>Cada barrio, una historia construida.</h2>
+            <p class="section-lead">
+              Las fotos se organizan automáticamente según las carpetas dentro de
+              <code>img/barrios/</code>. Solo agrega nuevas carpetas y pega imágenes:
+              el sitio las detecta y clasifica por sí mismo.
+            </p>
+          </div>
+          <div id="gallery-stats" class="gallery-stats" aria-live="polite"></div>
+        </header>
+
+        <div id="gallery-dynamic" class="gallery-dynamic"></div>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto" class="section">
+      <div class="container">
+        <div class="contact-wrap">
+          <div class="contact-copy">
+            <span class="section-kicker">05 · Contacto</span>
+            <h2>¿Tienes un proyecto en mente?</h2>
+            <p class="section-lead">
+              Escríbenos. Construyamos juntos la próxima comunidad que transformará una región.
+            </p>
+
+            <ul class="contact-list">
+              <li>
+                <span class="c-label">Oficina principal</span>
+                <span class="c-value">Ábrego, Norte de Santander, Colombia</span>
+              </li>
+              <li>
+                <span class="c-label">Teléfono</span>
+                <a class="c-value" href="tel:+573204911397">+57 320 491 1397</a>
+              </li>
+              <li>
+                <span class="c-label">Correo</span>
+                <a class="c-value" href="mailto:contacto@cjconstructores.co">contacto@cjconstructores.co</a>
+              </li>
+              <li>
+                <span class="c-label">Representante legal</span>
+                <span class="c-value">Nando Velásquez</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- HUELLA EN EL TERRITORIO · mapa interactivo -->
+          <div class="territory">
+            <div class="territory-head">
+              <span class="territory-kicker">Huella en el territorio</span>
+              <h3>Norte de Santander,<br>construido casa por casa.</h3>
+              <p>Pasa el cursor sobre cada pin para ver el proyecto.</p>
+            </div>
+
+            <div class="map-wrap" role="group" aria-label="Mapa de municipios con proyectos CJ Constructores">
+              <svg class="territory-map" viewBox="0 0 400 360" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <defs>
+                  <linearGradient id="mg" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0" stop-color="currentColor" stop-opacity=".15"/>
+                    <stop offset="1" stop-color="currentColor" stop-opacity=".04"/>
+                  </linearGradient>
+                  <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+                    <feGaussianBlur stdDeviation="1.2"/>
+                  </filter>
+                </defs>
+                <!-- silueta estilizada Norte de Santander -->
+                <path d="M 90 40
+                         C 140 30, 200 50, 240 70
+                         C 280 60, 310 90, 325 130
+                         C 345 160, 340 200, 320 235
+                         C 305 270, 260 300, 220 315
+                         C 180 330, 130 320, 95 290
+                         C 60 270, 45 230, 55 185
+                         C 50 145, 70 90, 90 40 Z"
+                      fill="url(#mg)"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linejoin="round"
+                      opacity=".55"/>
+
+                <!-- líneas decorativas -->
+                <g stroke="currentColor" stroke-width=".5" opacity=".25" fill="none">
+                  <path d="M90 40 C 160 130, 220 200, 320 235" stroke-dasharray="2 3"/>
+                  <path d="M240 70 C 200 150, 180 230, 220 315" stroke-dasharray="2 3"/>
+                </g>
+              </svg>
+
+              <!-- pines de municipios -->
+              <button type="button" class="pin" style="--x:58%;--y:30%" data-label="Ábrego" data-projects="4 proyectos · 369 viviendas">
+                <span class="pin-dot"></span>
+                <span class="pin-label">Ábrego</span>
+                <span class="pin-tooltip">
+                  <b>Ábrego</b>
+                  <span>4 proyectos · 369 viviendas</span>
+                  <em>Cuna del proyecto El Cajotal</em>
+                </span>
+              </button>
+
+              <button type="button" class="pin" style="--x:78%;--y:55%" data-label="Villa del Rosario" data-projects="1 proyecto · 190 viviendas">
+                <span class="pin-dot"></span>
+                <span class="pin-label">Villa del Rosario</span>
+                <span class="pin-tooltip">
+                  <b>Villa del Rosario</b>
+                  <span>1 proyecto · 190 viviendas</span>
+                  <em>Barrio El Morichal</em>
+                </span>
+              </button>
+
+              <button type="button" class="pin" style="--x:66%;--y:74%" data-label="Chinácota" data-projects="1 proyecto · 70 viviendas">
+                <span class="pin-dot"></span>
+                <span class="pin-label">Chinácota</span>
+                <span class="pin-tooltip">
+                  <b>Chinácota</b>
+                  <span>1 proyecto · 70 viviendas</span>
+                  <em>Villas de San Nicolás</em>
+                </span>
+              </button>
+
+              <button type="button" class="pin" style="--x:35%;--y:52%" data-label="Villa Caro" data-projects="1 proyecto · 80 viviendas">
+                <span class="pin-dot"></span>
+                <span class="pin-label">Villa Caro</span>
+                <span class="pin-tooltip">
+                  <b>Villa Caro</b>
+                  <span>1 proyecto · 80 viviendas</span>
+                  <em>Barrio Isabel Celis</em>
+                </span>
+              </button>
+
+              <button type="button" class="pin pin-active" style="--x:52%;--y:48%" data-label="Brisas de Belén" data-projects="EN OBRA · 23 viviendas">
+                <span class="pin-dot"></span>
+                <span class="pin-label">Brisas de Belén</span>
+                <span class="pin-tooltip">
+                  <b>Brisas de Belén</b>
+                  <span>EN OBRA · 23 viviendas</span>
+                  <em>Proyecto actual</em>
+                </span>
+              </button>
+            </div>
+
+            <ul class="territory-tags">
+              <li><span class="tag-dot"></span>Ábrego</li>
+              <li><span class="tag-dot"></span>Villa del Rosario</li>
+              <li><span class="tag-dot"></span>Chinácota</li>
+              <li><span class="tag-dot"></span>Villa Caro</li>
+              <li><span class="tag-dot live"></span>Brisas de Belén</li>
+            </ul>
+
+            <div class="territory-quote">
+              <span class="q-mark">"</span>
+              <p>No esperamos el futuro: lo construimos, ladrillo a ladrillo, con las familias del campo.</p>
+              <cite>— Equipo fundador CJ Constructores, 2010</cite>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="f-brand">
+        <div class="logo">
+          <div class="logo-mark">
+            <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect x="2" y="2" width="44" height="44" rx="10" fill="#0b2545"/>
+              <path d="M12 34 L24 14 L36 34 Z" fill="#f4b400"/>
+              <rect x="20" y="26" width="8" height="8" fill="#ffffff"/>
+            </svg>
+          </div>
+          <div class="logo-text">
+            <span class="logo-title">CJ Constructores</span>
+            <span class="logo-sub">LTDA · desde 1999</span>
+          </div>
+        </div>
+        <p class="f-tagline">
+          Construyendo hogares, construyendo país. Vivienda digna para familias colombianas.
+        </p>
+      </div>
+
+      <div class="f-cols">
+        <div>
+          <h4>Empresa</h4>
+          <a href="#historia">Historia</a>
+          <a href="#servicios">Servicios</a>
+          <a href="#proyectos">Proyectos</a>
+        </div>
+        <div>
+          <h4>Proyectos</h4>
+          <a href="#proyectos">El Cajotal</a>
+          <a href="#proyectos">Morichal</a>
+          <a href="#proyectos">Brisas de Belén</a>
+        </div>
+        <div>
+          <h4>Contacto</h4>
+          <a href="tel:+573204911397">+57 320 491 1397</a>
+          <a href="mailto:contacto@cjconstructores.co">contacto@cjconstructores.co</a>
+          <a href="#contacto">Ábrego, N. de S.</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom container">
+      <span>© 2026 CJ Constructores LTDA. Todos los derechos reservados.</span>
+      <span>Hecho con orgullo en Norte de Santander, Colombia.</span>
+    </div>
+  </footer>
+
+</body>
+</html>
