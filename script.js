@@ -116,7 +116,7 @@ function buildBarrioSection(folder, images) {
         <span class="barrio-meta">${images.length} foto${images.length === 1 ? '' : 's'}</span>
       </div>
     </div>
-    <span class="barrio-chip">Proyecto CJ</span>
+    <span class="barrio-chip">Proyecto AVIS</span>
   `;
   section.appendChild(head);
 
