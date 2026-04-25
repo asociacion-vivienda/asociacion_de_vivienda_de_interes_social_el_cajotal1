@@ -127,20 +127,10 @@ function buildBarrioSection(folder, images) {
     const fig = document.createElement('figure');
     fig.className = 'g-item';
     if (idx === 0 && images.length >= 3) fig.classList.add('g-tall');
-    fig.setAttribute('tabindex', '0');
-    fig.setAttribute('role', 'button');
-    fig.setAttribute('aria-label', `Ver foto de ${escapeHtml(folder)}`);
     fig.innerHTML = `
       <img src="${url}" alt="${escapeHtml(folder)} — ${escapeHtml(img)}" loading="lazy">
       <figcaption>${escapeHtml(folder)}</figcaption>
-      <span class="g-zoom-icon" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/>
-        </svg>
-      </span>
     `;
-    fig.addEventListener('click', () => openLightbox(url, `${folder} — ${img}`));
-    fig.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openLightbox(url, `${folder} — ${img}`); } });
     grid.appendChild(fig);
   });
   section.appendChild(grid);
@@ -194,100 +184,3 @@ document.addEventListener('DOMContentLoaded', () => {
     pin.addEventListener('blur', () => pin.classList.remove('is-active'));
   });
 });
-
-/* ------------ LIGHTBOX ---------------------------------------- */
-function buildLightbox() {
-  if (document.getElementById('lb-overlay')) return;
-
-  const overlay = document.createElement('div');
-  overlay.id = 'lb-overlay';
-  overlay.className = 'lb-overlay';
-  overlay.setAttribute('role', 'dialog');
-  overlay.setAttribute('aria-modal', 'true');
-  overlay.setAttribute('aria-label', 'Vista ampliada de foto');
-  overlay.innerHTML = `
-    <button class="lb-close" id="lb-close" aria-label="Cerrar">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
-        <path d="M18 6 6 18M6 6l12 12"/>
-      </svg>
-    </button>
-    <div class="lb-content">
-      <img class="lb-img" id="lb-img" src="" alt="" />
-      <p class="lb-caption" id="lb-caption"></p>
-    </div>
-    <button class="lb-nav lb-prev" id="lb-prev" aria-label="Foto anterior">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg>
-    </button>
-    <button class="lb-nav lb-next" id="lb-next" aria-label="Foto siguiente">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M9 18l6-6-6-6"/></svg>
-    </button>
-  `;
-  document.body.appendChild(overlay);
-
-  document.getElementById('lb-close').addEventListener('click', closeLightbox);
-  overlay.addEventListener('click', (e) => { if (e.target === overlay) closeLightbox(); });
-  document.getElementById('lb-prev').addEventListener('click', (e) => { e.stopPropagation(); lightboxNav(-1); });
-  document.getElementById('lb-next').addEventListener('click', (e) => { e.stopPropagation(); lightboxNav(1); });
-  document.addEventListener('keydown', lbKeyHandler);
-}
-
-// All loaded images across all barrios
-let lbImages = [];   // [{src, caption}]
-let lbIndex  = 0;
-
-function collectAllImages() {
-  lbImages = [];
-  document.querySelectorAll('.g-item img').forEach(img => {
-    lbImages.push({ src: img.src, caption: img.alt });
-  });
-}
-
-function openLightbox(src, caption) {
-  buildLightbox();
-  collectAllImages();
-  lbIndex = lbImages.findIndex(i => i.src === src);
-  if (lbIndex === -1) lbIndex = 0;
-  showLightboxImage();
-  const overlay = document.getElementById('lb-overlay');
-  overlay.classList.add('lb-visible');
-  document.body.style.overflow = 'hidden';
-  document.getElementById('lb-close').focus();
-}
-
-function closeLightbox() {
-  const overlay = document.getElementById('lb-overlay');
-  if (!overlay) return;
-  overlay.classList.remove('lb-visible');
-  document.body.style.overflow = '';
-}
-
-function lightboxNav(dir) {
-  lbIndex = (lbIndex + dir + lbImages.length) % lbImages.length;
-  showLightboxImage();
-}
-
-function showLightboxImage() {
-  const item = lbImages[lbIndex];
-  if (!item) return;
-  const img = document.getElementById('lb-img');
-  const cap = document.getElementById('lb-caption');
-  const prev = document.getElementById('lb-prev');
-  const next = document.getElementById('lb-next');
-  img.classList.remove('lb-img-loaded');
-  img.src = item.src;
-  img.alt = item.caption;
-  img.onload = () => img.classList.add('lb-img-loaded');
-  cap.textContent = item.caption;
-  // Hide nav if only 1 image
-  const show = lbImages.length > 1;
-  prev.style.display = show ? '' : 'none';
-  next.style.display = show ? '' : 'none';
-}
-
-function lbKeyHandler(e) {
-  const overlay = document.getElementById('lb-overlay');
-  if (!overlay || !overlay.classList.contains('lb-visible')) return;
-  if (e.key === 'Escape') closeLightbox();
-  if (e.key === 'ArrowLeft')  lightboxNav(-1);
-  if (e.key === 'ArrowRight') lightboxNav(1);
-}
