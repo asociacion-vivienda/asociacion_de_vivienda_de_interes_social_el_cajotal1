@@ -171,11 +171,45 @@ html:not(:has(.theme-toggle-input:checked)) .toggle-icon.sun { color: var(--acce
    ============================================================ */
 .site-header {
   position: sticky; top: 0; z-index: 50;
-  backdrop-filter: saturate(180%) blur(16px);
-  -webkit-backdrop-filter: saturate(180%) blur(16px);
-  background: color-mix(in srgb, var(--bg) 75%, transparent);
-  border-bottom: 1px solid var(--border);
-  transition: background .3s var(--ease), border-color .3s var(--ease);
+  backdrop-filter: saturate(160%) blur(24px) brightness(0.92);
+  -webkit-backdrop-filter: saturate(160%) blur(24px) brightness(0.92);
+  background:
+    linear-gradient(160deg,
+      rgba(255,255,255,0.05) 0%,
+      rgba(255,255,255,0.01) 50%,
+      rgba(255,255,255,0.03) 100%
+    );
+  border-bottom: 1px solid rgba(255,255,255,0.09);
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.10) inset,
+    0 12px 40px -12px rgba(0,0,0,0.50),
+    0 2px 8px rgba(0,0,0,0.25);
+  transition: background .4s var(--ease), border-color .4s var(--ease), box-shadow .4s var(--ease);
+  isolation: isolate;
+}
+
+/* Thin iridescent top edge */
+.site-header::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255,255,255,0.18) 30%,
+    rgba(160,200,255,0.14) 55%,
+    rgba(255,255,255,0.10) 75%,
+    transparent 100%
+  );
+  animation: shimmer-header 8s ease-in-out infinite alternate;
+}
+
+
+@keyframes shimmer-header {
+  0%   { opacity: 0.5; }
+  100% { opacity: 1; }
 }
 .header-inner {
   display: flex; align-items: center; justify-content: space-between;
@@ -201,11 +235,44 @@ html:not(:has(.theme-toggle-input:checked)) .toggle-icon.sun { color: var(--acce
 
 .nav {
   display: flex; align-items: center; gap: 6px;
-  background: var(--surface);
-  border: 1px solid var(--border);
+  background:
+    linear-gradient(160deg,
+      rgba(255,255,255,0.10) 0%,
+      rgba(255,255,255,0.03) 50%,
+      rgba(255,255,255,0.07) 100%
+    );
+  border: 1px solid rgba(255,255,255,0.14);
   border-radius: 999px;
   padding: 6px;
-  box-shadow: var(--shadow-sm);
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.18) inset,
+    0 -1px 0 rgba(0,0,0,0.20) inset,
+    0 4px 20px rgba(0,0,0,0.35),
+    0 1px 4px rgba(0,0,0,0.20);
+  backdrop-filter: blur(16px) saturate(150%);
+  -webkit-backdrop-filter: blur(16px) saturate(150%);
+  position: relative;
+  isolation: isolate;
+  transition: box-shadow .3s var(--ease), background .3s var(--ease);
+}
+
+/* Thin top highlight — glass curve effect */
+.nav::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 10%; right: 10%;
+  height: 1px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.22), transparent);
+  pointer-events: none;
+}
+
+.nav:hover {
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.22) inset,
+    0 -1px 0 rgba(0,0,0,0.25) inset,
+    0 8px 32px rgba(0,0,0,0.40),
+    0 2px 8px rgba(0,0,0,0.25);
 }
 .nav a {
   padding: 8px 16px;
@@ -217,7 +284,16 @@ html:not(:has(.theme-toggle-input:checked)) .toggle-icon.sun { color: var(--acce
 }
 .nav a:hover {
   color: var(--text);
-  background: var(--surface-2);
+  background:
+    linear-gradient(135deg,
+      rgba(255,255,255,0.12) 0%,
+      rgba(255,255,255,0.04) 100%
+    );
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.18) inset,
+    0 2px 8px rgba(0,0,0,0.20);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 /* ============================================================
@@ -1302,45 +1378,69 @@ html:has(.theme-toggle-input:checked) .territory { color: var(--brand-400); }
   --avis-blue-soft:   #eff6ff;   /* azul tenue de fondo          */
 }
 
-/* === HEADER — azul marino sólido, texto blanco, contraste alto === */
+/* === HEADER — liquid glass oscuro sobre fondo azul marino === */
 html:not(:has(.theme-toggle-input:checked)) .site-header {
-  background: var(--avis-blue);
-  border-bottom: none;
-  box-shadow: 0 2px 12px rgba(27,74,138,.22);
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
+  background: rgba(0,0,0,0.05);
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.14) inset,
+    0 8px 32px -8px rgba(0,0,0,0.20),
+    0 2px 8px rgba(0,0,0,0.08);
+  backdrop-filter: saturate(160%) blur(24px) brightness(0.94);
+  -webkit-backdrop-filter: saturate(160%) blur(24px) brightness(0.94);
 }
 html:not(:has(.theme-toggle-input:checked)) .logo-title {
-  color: #ffffff;
+  color: var(--text);
 }
 html:not(:has(.theme-toggle-input:checked)) .logo-sub {
-  color: rgba(255,255,255,.65);
+  color: var(--text-muted);
 }
 html:not(:has(.theme-toggle-input:checked)) .nav {
-  background: rgba(255,255,255,.10);
-  border-color: rgba(255,255,255,.18);
+  background: rgba(255,255,255,0.35);
+  border-color: rgba(0,0,0,0.08);
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.70) inset,
+    0 -1px 0 rgba(0,0,0,0.06) inset,
+    0 4px 20px rgba(0,0,0,0.10),
+    0 1px 4px rgba(0,0,0,0.06);
+}
+html:not(:has(.theme-toggle-input:checked)) .nav:hover {
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.80) inset,
+    0 8px 28px rgba(0,0,0,0.14),
+    0 2px 6px rgba(0,0,0,0.08);
 }
 html:not(:has(.theme-toggle-input:checked)) .nav a {
-  color: rgba(255,255,255,.85);
+  color: var(--text-muted);
 }
 html:not(:has(.theme-toggle-input:checked)) .nav a:hover {
-  color: #ffffff;
-  background: rgba(255,255,255,.15);
+  color: var(--text);
+  background: rgba(255,255,255,0.55);
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.80) inset,
+    0 2px 8px rgba(0,0,0,0.08);
 }
 html:not(:has(.theme-toggle-input:checked)) .toggle-track {
-  background: rgba(255,255,255,.12);
-  border-color: rgba(255,255,255,.22);
+  background: rgba(255,255,255,0.40);
+  border-color: rgba(0,0,0,0.10);
 }
 
 /* === HERO — fondo blanco, con franja azul de acento lateral === */
 html:not(:has(.theme-toggle-input:checked)) .hero {
-  background: #ffffff;
-  border-bottom: 4px solid var(--avis-blue);
+  background: linear-gradient(
+    to bottom,
+    rgba(22,163,74,0.18) 0%,
+    rgba(22,163,74,0.08) 40%,
+    rgba(22,163,74,0.02) 75%,
+    transparent 100%
+  );
+  border-bottom: none;
 }
 html:not(:has(.theme-toggle-input:checked)) .hero-bg {
   background:
-    radial-gradient(900px 500px at 90% -5%,  rgba(27,74,138,.07), transparent 60%),
-    radial-gradient(700px 400px at -5% 50%, rgba(22,101,52,.05), transparent 60%);
+    radial-gradient(900px 600px at 50% -10%, rgba(22,163,74,0.22), transparent 65%),
+    radial-gradient(700px 400px at 90% 30%, rgba(27,74,138,.06), transparent 60%),
+    radial-gradient(600px 400px at -5% 50%, rgba(22,101,52,.05), transparent 60%);
 }
 html:not(:has(.theme-toggle-input:checked)) .gradient-text {
   background: linear-gradient(135deg, var(--avis-blue), var(--avis-green-mid));
